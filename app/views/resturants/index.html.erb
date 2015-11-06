@@ -1,15 +1,25 @@
-<div id='results'>
+<div class='container'>
   <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <% @resturants.each do |food| %>
-            <div class="thumbnail">
-              <img src=<%= food.img %> alt="food">
-              <div class="caption">
-                <h3><%= food.name%></h3>
-                <p><a href=<%= "/resturants/#{food.phone}" %> class="btn btn-primary" role="button">View</a> </p>
+    <div class="col-md-8">
+      <div id='results'>
+        <% @resturants.each do |food| %>
+            <div class="panel panel-default">
+              <div class="panel-heading"><a href=<%= "/resturants/#{food.phone}" %> ><%= food.name%></a></div>
+              <div class="panel-body">
+                <div class='col-md-3'>
+                  <img src=<%= food.img %> alt="food" >
+                </div>
+                <div class='col-md-8'>
+                  <p>Yelp Rating: <%= food.yelpratingicon %></p>
+                  <p>Number of Yelp Reviews: <%= food.yelpreviews %></p>
+                  <p>Food Type: <%= food.foodtype %></p>
+                  <p>Address: <%= food.address %></p>
+                  <p>Phone Number: <%= food.phone %></p>
+                </div>
               </div>
-        </div>
-      <% end %>
+            </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
