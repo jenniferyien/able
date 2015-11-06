@@ -1,12 +1,8 @@
-<!--
-<div>
-  <input type="text" id="search" name='text' placeholder="search" >
-  <input type="submit" name="Submit" id='submit'value="Submit">
+<div id='results'>
+<% @resturants.each do |food| %>
+<li><%= food.name%></li>
+<% end %>
 </div>
 
-<div id=returned></div> -->
-
-<%= react_component 'SearchPage' %>
-<!-- <div id='body'>
-<div id='information'></div>
+<!-- <div id='newResults'>
 </div> -->

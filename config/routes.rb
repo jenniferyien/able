@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'signout'
 
   get '/resturants', to: 'resturants#index'
+  # post '/resturants/:search', to: 'resturants#index'
   get '/resturants_info', to: 'resturants#info'
   post '/resturants_info/:search', to: "resturants#info"
 
