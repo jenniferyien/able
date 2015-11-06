@@ -7,18 +7,17 @@ $(function(){
     var information = $("#info").val()
     console.log(information)
 
-    var geocoder;
-    var map;
+    var map
     function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 40.7272197812854, lng: -73.9842996},
-      zoom: 12
-      });
       $.ajax({
         url:"/resturants_info",
         method: "GET",
         dataType: "JSON",
         success: function(data, success, xhr){
+      map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: data.region.center.latitude, lng: data.region.center.longitude},
+      zoom: 12
+      });
           var dat = (data.businesses)
           // console.log(dat)
           var places = []
