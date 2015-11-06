@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/resturants', to: 'resturants#index'
   get '/resturants_info', to: 'resturants#info'
+  post '/resturants_info/:search', to: "resturants#info"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
