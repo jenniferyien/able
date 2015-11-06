@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'signout'
 
   get '/resturants', to: 'resturants#index'
+  # post '/resturants/:search', to: 'resturants#index'
   get '/resturants_info', to: 'resturants#info'
   get '/map', to: 'resturants#map'
   # You can have the root of your site routed with "root"

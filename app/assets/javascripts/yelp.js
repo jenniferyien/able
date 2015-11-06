@@ -1,3 +1,4 @@
+
 $(function(){
     $("#submit").click(function(event){
     event.preventDefault()
@@ -7,16 +8,20 @@ $(function(){
       url:"/resturants_info/"+searchInfo,
       method: "POST",
       success: function(data,success,xhr){
-       var searchedInfo = $.makeArray(data)
-       console.log(searchedInfo)
-       // searchedInfo.businesses.forEach(function(info){
-       //  console.log(info)
-       // })
+       console.log(data.businesses[0])
+       $('#results').empty()
+       data.businesses.forEach(function(business){
+         $('<p>'+business.name+'</p>').appendTo('#results')
+       })
+
       },
       error: function(xhr, data, error){
         console.log("error is "+ error)
       }
-
     });
-  })
+})
+
+
+})
+
 })
