@@ -14,21 +14,24 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- * {
-   border-radius: 0 !important;
- }
-
- button a {
-   color: #000 !important;
- }
-
-html, body {
-  height: 100%;
+* {
+ border-radius: 0 !important;
 }
 
-#map{
+
+button a {
+ color: #000 !important;
+}
+
+html, body {
+  height: 100%
+}
+
+#map {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }

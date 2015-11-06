@@ -1,16 +1,28 @@
-// $(function(){
-//   $("#submit").click(function(event){
-//     event.preventDefault;
-//     $.ajax({
-//       url:"/resturants_info",
-//       method: "GET",
-//       success: function(data,success,xhr){
-//         // console.log(data)
-//       },
-//       error: function(xhr, data, error){
-//         console.log("error is "+ error)
-//       }
-//
-//     });
-//   })
-// })
+
+
+$(function(){
+    $("#submit").click(function(event){
+    event.preventDefault()
+    var searchInfo = $('#search').val()
+    console.log(searchInfo)
+    $.ajax({
+      url:"/resturants_info/"+searchInfo,
+      method: "POST",
+      success: function(data,success,xhr){
+       console.log(data.businesses[0])
+       $('#results').empty()
+       data.businesses.forEach(function(business){
+         var link = "/resturants/"+business.phone
+         $('<p><a href='+link+'>'+business.name+'</a></p>').appendTo('#results')
+       })
+
+      },
+      error: function(xhr, data, error){
+        console.log("error is "+ error)
+      }
+    });
+})
+
+
+})
+>>>>>>> yelp

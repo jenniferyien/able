@@ -32,6 +32,7 @@ gem "omniauth-google-oauth2"
 
 gem 'bootstrap-sass', '~> 3.3.5'
 
+gem 'react-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

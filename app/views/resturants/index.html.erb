@@ -1,7 +1,15 @@
-
-<div>
-  <input type="text" id="search" name='text' placeholder="search" >
-  <input type="submit" name="Submit" id='submit'value="Submit">
+<div id='results'>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <% @resturants.each do |food| %>
+            <div class="thumbnail">
+              <img src=<%= food.img %> alt="food">
+              <div class="caption">
+                <h3><%= food.name%></h3>
+                <p><a href=<%= "/resturants/#{food.phone}" %> class="btn btn-primary" role="button">View</a> </p>
+              </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<div id=returned></div>
