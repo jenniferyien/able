@@ -11,7 +11,8 @@ $(function(){
        console.log(data.businesses[0])
        $('#results').empty()
        data.businesses.forEach(function(business){
-         $('<p>'+business.name+'</p>').appendTo('#results')
+         var link = "/resturants/"+business.phone
+         $('<p><a href='+link+'>'+business.name+'</a></p>').appendTo('#results')
        })
 
       },
