@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105211446) do
+ActiveRecord::Schema.define(version: 20151106155316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,29 @@ ActiveRecord::Schema.define(version: 20151105211446) do
   create_table "posts", force: :cascade do |t|
     t.string   "comment"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "resturant_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
+  add_index "posts", ["resturant_id"], name: "index_posts_on_resturant_id", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "resturants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "reviews"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "yelpreviews"
+    t.string   "foodtype"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "img"
+    t.string   "isopen"
+    t.string   "yelpurl"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -49,5 +67,6 @@ ActiveRecord::Schema.define(version: 20151105211446) do
 
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "posts", "resturants"
   add_foreign_key "posts", "users"
 end
