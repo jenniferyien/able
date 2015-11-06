@@ -10,8 +10,12 @@ Rails.application.routes.draw do
 
   get '/resturants', to: 'resturants#index'
   get '/resturants_info', to: 'resturants#info'
+<<<<<<< HEAD
   post '/resturants_info/:search', to: "resturants#info"
 
+=======
+  get '/map', to: 'resturants#map'
+>>>>>>> 4e393ffb4426afd6c23b77c2344831ca588537da
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

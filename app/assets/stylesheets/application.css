@@ -24,3 +24,11 @@
  button a {
    color: #000 !important;
  }
+
+html, body {
+  height: 100%;
+}
+
+#map{
+  height: 100%;
+}
