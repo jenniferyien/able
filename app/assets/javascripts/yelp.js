@@ -59,7 +59,24 @@ $(function(){
         console.log("error is "+ error)
       }
     });
-})
+    })
+    $("#addReview").click(function(){
+      var review_data = {
+        comment: $("#comment").val(),
+        user_id: $("#user_id").val(),
+        resturant_id: $("#resturant_id").val()
+      }
+      $.ajax({
+        url: "/posts",
+        method: "POST",
+        data: review_data,
+        success: function(data,success,xhr) {
+          
+        }
+      })
+    });
 
 
 })
+
+

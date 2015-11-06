@@ -9,7 +9,6 @@ class ResturantsController < ApplicationController
   end
 
 
-
   def info
     @search = params[:search]
    @responses = Yelp.client.search("%#{params[:search]}%", { term: 'resturant', sort:2 })
@@ -46,9 +45,6 @@ class ResturantsController < ApplicationController
   def show
     @name = params[:url]
     @resturant = Resturant.find_by(phone: @name)
-  end
-
-  def map
 
   end
 end
