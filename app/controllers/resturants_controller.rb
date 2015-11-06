@@ -41,7 +41,12 @@ class ResturantsController < ApplicationController
   end
 
   def index
-    @resturants = Resturant.where('address iLIKE ?',"%#{params[:search]}%")
+    @resturants = Resturant.all
+  end
+
+  def show
+    @name = params[:url]
+    @resturant = Resturant.find_by(phone: @name)
   end
 
   def map
