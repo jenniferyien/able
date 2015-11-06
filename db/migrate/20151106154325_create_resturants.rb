@@ -12,6 +12,7 @@ class CreateResturants < ActiveRecord::Migration
       t.string :img
       t.string :isopen
       t.string :yelpurl
+      t.string :yelpratingicon
 
       t.timestamps null: false
     end

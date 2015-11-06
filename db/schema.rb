@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(version: 20151106155316) do
     t.string   "img"
     t.string   "isopen"
     t.string   "yelpurl"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "yelpratingicon"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
