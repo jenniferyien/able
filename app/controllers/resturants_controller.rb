@@ -9,7 +9,7 @@ class ResturantsController < ApplicationController
 
   def info
     @search = params[:search]
-   @responses = Yelp.client.search("New York", { term: 'resturant', offset: 40 })
+   @responses = Yelp.client.search("%#{params[:search]}%", { term: 'resturant', offset: 40 })
   #  responses = Yelp.client.search('East Village, NY', { term: 'resturant', offset: 40 })
    render json: @responses
   end
