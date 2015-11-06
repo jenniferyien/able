@@ -15,10 +15,10 @@ $(function(){
         method: "GET",
         dataType: "JSON",
         success: function(data, success, xhr){
-      map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: data.region.center.latitude, lng: data.region.center.longitude},
-      zoom: 12
-      });
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: data.region.center.latitude, lng: data.region.center.longitude},
+            zoom: 12
+          });
           var dat = (data.businesses)
           // console.log(dat)
           var places = []
