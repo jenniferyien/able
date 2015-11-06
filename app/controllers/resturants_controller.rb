@@ -7,7 +7,7 @@ class ResturantsController < ApplicationController
     config.token_secret = ENV["YELP_TOKEN_SECRET"]
   end
   def info
-   responses = Yelp.client.search('East Village, NY', { term: 'resturant', sort: 2})
+   responses = Yelp.client.search('Manhattan, NY', { term: 'resturant', sort: 2})
    render json: responses
   end
 
