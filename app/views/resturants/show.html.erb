@@ -1,2 +1,29 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="./assets/stylesheets/show.css">
+</head>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4" id="searched-restaurant">
+			<h2><%= @resturant.name %></h2>
+			<h4> Yelp Rating: <%= @resturant.yelpratingicon %> </h4>
+			<h4> Reviews: <%= @resturant.yelpreviews %> </h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4" id="posts">
+			<h2> User Reviews </h2>
+			<% @resturant.posts.each do |comment| %>
+				<p> <%= comment.user.first_name %> </p> 
+					<p> <%= comment.comment %> </p>
+			<%	end %>
+		</div>
+	</div>
+	<div class="row">
+		<input type="hidden" id="resturant_id" value=<%= @resturant.id %>>
+		<input type="hidden" id="user_id" value=<%= current_user.id %>>
+		<input type="text" id="comment">
+		<button id="addReview">submit</button>
+	</div>
+</div>
 
-<p><%= @resturant.name %></p>
+
