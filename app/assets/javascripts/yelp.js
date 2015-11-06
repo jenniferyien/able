@@ -4,7 +4,7 @@ $(function(){
     $("#submit").click(function(event){
     event.preventDefault()
     var searchInfo = $('#search').val()
-    console.log(searchInfo)
+    // console.log(searchInfo)
     $.ajax({
       url:"/resturants_info/"+searchInfo,
       method: "POST",
