@@ -50,7 +50,6 @@ $(function(){
          heading.appendTo(info)
          body.appendTo(info)
 
-
          info.appendTo('#results')
        })
 
@@ -71,12 +70,10 @@ $(function(){
         method: "POST",
         data: review_data,
         success: function(data,success,xhr) {
-          
+
         }
       })
     });
 
 
 })
-
-
