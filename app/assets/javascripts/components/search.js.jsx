@@ -22,6 +22,12 @@
 //     })
 //     return (
 //       <div>
+//         <form class="navbar-form navbar-left" role="search">
+//           <div class="form-group">
+//             <input type="text" id="search" class="form-control" placeholder="Search">
+//           </div>
+//           <button type="submit" id='submit' class="btn btn-default">Submit</button>
+//         </form>
 //         <ul>{info}</ul>
 //       </div>
 //     )
