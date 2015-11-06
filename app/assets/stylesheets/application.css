@@ -16,3 +16,11 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ * {
+   border-radius: 0 !important;
+ }
+
+ button a {
+   color: #000 !important;
+ }
