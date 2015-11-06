@@ -20,12 +20,12 @@ function initMap() {
       places.push({name: dat[i].name, latitude: dat[i].location.coordinate.latitude, longitude: dat[i].location.coordinate.longitude});
       // lat.push(dat[i].location.coordinate.longitude);
       }
-      console.log(places)
+      // console.log(places)
       for(var i =0; i<places.length; i++){
         var marker = new google.maps.Marker({
           position: {lat: places[i].latitude, lng: places[i].longitude},
           map: map,
-          title: 'Hello World!'
+          title: places[i].name
         });
       }
 
