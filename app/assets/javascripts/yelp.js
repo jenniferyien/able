@@ -41,14 +41,14 @@ $(function(){
        data.businesses.forEach(function(business){
          var link = "/resturants/"+business.phone
          var info = $('<div class="panel panel-default"/>')
-         var heading = $('<div class="panel-heading"><a href=link >business.name</a></div>')
+         var heading = $('<div class="panel-heading"><a href='+link +'>'+business.name+'</a></div>')
          var body = $('<div class="panel-body"/>')
-         var image = $('<div class="col-md-3"><img src=business.image_url alt="food"></div>')
-         var base = $('<div class="col-md-8"><p>Yelp Rating: business.rating </p><p>Number of Yelp Reviews: business.review_count </p><p>Food Type: business.categories </p><p>Address: business.location.display_address </p><p>Phone Number: business.phone </p></div>')
-         base.appendTo(image)
+         var image = $('<div class="col-md-3"><img src='+business.image_url+'></div>')
+         var base = $('<div class="col-md-8"><p>Yelp Rating:'+ business.rating+' </p><p>Number of Yelp Reviews:' + business.review_count +'</p><p>Food Type:'+ business.categories +' </p><p>Address: '+business.location.display_address +'</p><p>Phone Number: '+business.phone +'</p></div>')
          image.appendTo(body)
-         body.appendTo(heading)
+         base.appendTo(body)
          heading.appendTo(info)
+         body.appendTo(info)
 
 
          info.appendTo('#results')
