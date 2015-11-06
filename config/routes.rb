@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-   root 'users#index'
+   
 
   # omniauth callback
   get 'auth/:provider/callback', to: 'sessions#create'
   # signout user
   get '/logout', to: 'sessions#destroy', as: 'signout'
 
-  get '/resturants', to: 'resturants#index'
+  get '/', to: 'resturants#index'
 
   get '/resturants/:url', to:'resturants#show'
   # post '/resturants/:search', to: 'resturants#index'
