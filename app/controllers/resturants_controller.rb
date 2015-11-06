@@ -8,11 +8,14 @@ class ResturantsController < ApplicationController
     config.token_secret = ENV["YELP_TOKEN_SECRET"]
   end
 
+
+
   def info
     @search = params[:search]
-   @responses = Yelp.client.search("%#{params[:search]}%", { term: 'resturant', offset: 40 })
+   @responses = Yelp.client.search("%#{params[:search]}%", { term: 'resturant', sort:2 })
   #  @responses = Yelp.client.search('East Village, NY', { term: 'resturant', offset: 40 })
    render json: @responses
+
 
    @responses.businesses.each do |foodPlace|
      unless Resturant.find_by(yelpurl: foodPlace.url)
@@ -31,7 +34,9 @@ class ResturantsController < ApplicationController
        @resturant.save!
      end
    end
+
   end
+
 
 
   def index
@@ -41,5 +46,9 @@ class ResturantsController < ApplicationController
   def show
     @name = params[:url]
     @resturant = Resturant.find_by(phone: @name)
+  end
+
+  def map
+
   end
 end
